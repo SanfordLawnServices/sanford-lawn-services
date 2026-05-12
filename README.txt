@@ -1,1 +1,0 @@
-Upload this index.html only if your image files are in the root of the GitHub repository instead of inside an assets folder. Do not delete the CNAME file.
