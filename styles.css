@@ -701,3 +701,15 @@ td:first-child { color: var(--text); font-weight: 800; }
   color: var(--muted);
   font-weight: 700;
 }
+.contact-card,
+.service-card,
+.info-card,
+.card {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
