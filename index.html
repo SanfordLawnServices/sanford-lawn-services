@@ -333,7 +333,7 @@
             <li>Local RV owners and camper owners</li>
             <li>Mobile service by request</li>
           </ul>
-          <a class="btn btn-primary" href="tel:9193566986">Check Availability</a>
+          <button class="btn btn-primary" type="button" onclick="checkServiceArea()">Check Availability</button>
         </div>
       </div>
     </section>
@@ -412,5 +412,50 @@
   </footer>
 
   <script src="script.js"></script>
+<script>
+  function checkServiceArea() {
+    const location = prompt("Enter your city, neighborhood, or ZIP code to check service availability:");
+
+    if (!location) {
+      alert("No problem. You can still call or text 919-356-6986 to check availability.");
+      return;
+    }
+
+    const input = location.toLowerCase().trim();
+
+    const primaryAreas = [
+      "sanford",
+      "27330",
+      "27332",
+      "lee county",
+      "broadway",
+      "lemon springs",
+      "tramway",
+      "jonesboro",
+      "colon",
+      "carolina trace"
+    ];
+
+    const nearbyAreas = [
+      "cameron",
+      "olivia",
+      "vass",
+      "moncure",
+      "gulf",
+      "goldston"
+    ];
+
+    const isPrimary = primaryAreas.some(area => input.includes(area));
+    const isNearby = nearbyAreas.some(area => input.includes(area));
+
+    if (isPrimary) {
+      alert("Good news! You are likely within our primary service area. Please call/text 919-356-6986 or submit a quote request so we can confirm details.");
+    } else if (isNearby) {
+      alert("You may be within our extended service area. Please call/text 919-356-6986 with your address so we can confirm availability.");
+    } else {
+      alert("You may be outside our regular service area, but feel free to call/text 919-356-6986. We may still be able to help depending on the job and schedule.");
+    }
+  }
+</script>
 </body>
 </html>
