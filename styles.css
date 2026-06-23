@@ -735,3 +735,11 @@ a {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+/* Keep flyer-style before/after graphics from being badly cropped */
+.before-card.image-contain img {
+  object-fit: contain;
+  background: #ffffff;
+  padding: 0.5rem;
+}
+
