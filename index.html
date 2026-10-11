@@ -1,436 +1,1065 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sanford Lawn & Exterior Services | Lawn Care, Pressure Washing, RV & Vehicle Washing</title>
-  <meta name="description" content="Sanford Lawn & Exterior Services provides lawn care, pressure washing, RV exterior cleaning, camper washing, and vehicle washing in Sanford, NC. Fully insured. Free estimates. Call or text Vincent." />
-  <meta name="keywords" content="Sanford NC lawn care, Sanford NC lawn service, pressure washing Sanford NC, RV washing Sanford NC, vehicle washing Sanford NC, lawn mowing Sanford NC" />
+<title>Sanford Lawn & Exterior Services | Sanford NC</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Kaushan+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta name="description" content="Sanford Lawn & Exterior Services provides mowing, edging, trimming, fall cleanup, pinecone removal, shrub care, driveway cleaning, pressure washing, and house soft washing in Sanford, NC.">
+
+<meta name="keywords" content="Sanford NC lawn care, lawn mowing Sanford, pressure washing Sanford NC, leaf cleanup, pinecone cleanup, shrub trimming, driveway cleaning">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.review-card {
+  background: white;
+  border: 1px solid #dce9dc;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+
+.review-stars {
+  color: #e5a500;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+.review-card p {
+  line-height: 1.7;
+  color: #26392d;
+}
+
+.review-name {
+  color: #176631;
+  font-weight: 700;
+}
+
+.review-summary {
+  text-align: center;
+  margin: 25px auto;
+}
+
+.review-summary h2 {
+  font-size: clamp(28px,4vw,46px);
+  color: #113b24;
+}
+
+.review-actions {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.seasonal-image {
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#e6f3df,#d9eeee);
+  font-size: 65px;
+}
+
+.pricing-photo {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 25px auto;
+  border-radius: 18px;
+}
+
+.price-note {
+  text-align: center;
+  color: #59675e;
+  font-size: 14px;
+  max-width: 850px;
+  margin: 15px auto 25px;
+}
+
+.quick-info a,
+.contact-list a {
+  overflow-wrap: anywhere;
+}
+
+@media(max-width:768px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>Locally Owned & Operated in Sanford, NC</span>
-      <a href="tel:9193566986">Call / Text Vincent: 919-356-6986</a>
-    </div>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>Locally Owned & Operated in Sanford, NC</span>
+    <a href="tel:9193566986">
+      Call Vincent: 919-356-6986
+    </a>
   </div>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Sanford Lawn & Exterior Services home">
-        <img src="clean-logo.png" alt="Sanford Lawn & Exterior Services logo" />
-      </a>
-
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-
-      <nav class="site-nav">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#about">About Vincent</a>
-        <a href="#gallery">Before & After</a>
-        <a href="#areas">Service Area</a>
-        <a href="#quote">Quote</a>
-        <a class="btn btn-primary nav-cta" href="tel:9193566986">Call Now</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">Green. Clean. Shine.</div>
-          <h1>Professional Lawn & Exterior Services for Sanford, NC</h1>
-          <p>
-            Honest work. Reliable service. No nonsense. Sanford Lawn & Exterior Services helps homeowners keep their yards, driveways, RVs, and vehicles looking sharp with a clean, local, fully insured service you can trust.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#quote">Request a Free Estimate</a>
-            <a class="btn btn-secondary" href="tel:9193566986">Call / Text 919-356-6986</a>
-          </div>
-
-          <ul class="trust-list">
-            <li>General Liability Insured</li>
-            <li>Free Estimates</li>
-            <li>Professional Invoices Available</li>
-            <li>Convenient Payment Options</li>
-          </ul>
-        </div>
-
-        <div class="hero-card">
-          <img class="hero-photo" src="hero-pressure-wash.jpg" alt="Pressure washing service at a home in Sanford, NC" />
-          <div class="hero-badge">
-            <img src="detailed-badge-logo.png" alt="Sanford Lawn & Exterior Services badge logo" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="quick-info">
-      <div class="container quick-grid">
-        <article>
-          <h3>Lawn Care</h3>
-          <p>Mowing, edging, trimming, and cleanup to keep your lawn neat, sharp, and well cared for.</p>
-        </article>
-        <article>
-          <h3>Pressure Washing</h3>
-          <p>Driveways, walkways, and hard surfaces cleaned to improve curb appeal and remove built-up dirt and grime.</p>
-        </article>
-        <article>
-          <h3>RV & Vehicle Washing</h3>
-          <p>Exterior washing for RVs, campers, cars, trucks, and SUVs using careful brush-and-rinse service.</p>
-        </article>
-        <article>
-          <h3>Call or Text Vincent</h3>
-          <p><a href="tel:9193566986">919-356-6986</a><br><a href="mailto:sanfordlawnexteriorservices@gmail.com">sanfordlawnexteriorservices@gmail.com</a></p>
-        </article>
-        <article>
-          <h3>Invoices & Payments</h3>
-          <p>Professional invoices available. Convenient payment options accepted.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">What We Do</span>
-          <h2>Lawn Care & Exterior Cleaning Services</h2>
-          <p>From regular mowing to pressure washing and vehicle cleaning, Sanford Lawn & Exterior Services helps keep your property looking clean, sharp, and well cared for.</p>
-        </div>
-
-        <div class="service-grid">
-
-  <article class="service-card">
- <img
-  src="lawn-results.png?v=2"
-  alt="Lawn care before and after results"
-/>
-    <div class="service-body">
-      <h3>Lawn Care</h3>
-      <p>Mowing, edging, trimming, and yard cleanup for a clean, well-kept property.</p>
-    </div>
-  </article>
-
-  <article class="service-card">
-    <img 
-      src="https://images.pexels.com/photos/5652626/pexels-photo-5652626.jpeg?auto=compress&cs=tinysrgb&w=900" 
-      alt="Pressure washing house siding"
-    />
-    <div class="service-body">
-      <h3>Pressure Washing</h3>
-      <p>Driveways, sidewalks, walkways, siding, and exterior surfaces cleaned for a fresh finish.</p>
-    </div>
-  </article>
-
-  <article class="service-card">
-  <img
-  src="rv-washing.png"
-  alt="RV exterior cleaning with foam cannon and pressure washer"
-/>
-    <div class="service-body">
-      <h3>RV Exterior Cleaning</h3>
-      <p>Exterior washing for RVs and campers to help remove dirt, pollen, road grime, and buildup.</p>
-    </div>
-  </article>
-
-  <article class="service-card">
-  <img
-  src="truck-washing.png"
-  alt="Truck exterior washing with foam cannon and pressure washer"
-/>
-    <div class="service-body">
-      <h3>Vehicle Washing</h3>
-      <p>Hand washing for cars, trucks, and SUVs with dependable owner-operated care.</p>
-    </div>
-  </article>
-
 </div>
-          </article>
-        </div>
+
+<!-- HEADER -->
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a class="brand" href="#home">
+      <img src="clean-logo.png"
+           alt="Sanford Lawn & Exterior Services">
+    </a>
+
+    <button class="menu-toggle"
+            aria-label="Toggle menu"
+            aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="site-nav">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews ★★★★★</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About Vincent</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#areas">Service Area</a>
+      <a href="#quote">Free Estimate</a>
+      <a class="btn btn-primary nav-cta"
+         href="tel:9193566986">
+         Call Now
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+
+      <div class="eyebrow">
+        Green. Clean. Shine.
       </div>
-    </section>
 
-    <section id="pricing" class="pricing-section">
-  <div class="section-heading">
-    <p class="section-kicker">Straightforward Pricing</p>
-    <h2>Starting Prices Posted Up Front</h2>
-    <p>
-      Prices shown are starting prices and are intended to help you budget for your project.
-      Final pricing is based on property size, terrain, accessibility, obstacles, grass height,
-      condition, buildup, and the actual scope of work.
-    </p>
+      <h1>
+        Professional Lawn & Exterior Services
+        for Sanford, NC
+      </h1>
+
+      <p>
+        Honest work. Reliable service. No nonsense.
+        Sanford Lawn & Exterior Services helps
+        homeowners keep their lawns, landscapes,
+        driveways, and exterior surfaces looking
+        clean, sharp, and well cared for.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#quote">
+          Request a Free Estimate
+        </a>
+
+        <a class="btn btn-secondary"
+           href="tel:9193566986">
+          Call Vincent
+        </a>
+      </div>
+
+      <ul class="trust-list">
+        <li>Locally Owned & Operated</li>
+        <li>General Liability Insured</li>
+        <li>Free Estimates</li>
+        <li>Professional Invoices Available</li>
+        <li>Convenient Payment Options</li>
+        <li>★★★★★ 5.0 Google Rating — 8 Reviews</li>
+      </ul>
+
+    </div>
+
+    <div class="hero-card">
+
+      <img class="hero-photo"
+           src="hero-pressure-wash.jpg"
+           alt="Exterior pressure washing">
+
+      <div class="hero-badge">
+        <img src="detailed-badge-logo.png"
+             alt="Sanford Lawn & Exterior Services logo">
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="pricing-image-wrapper">
-    <img
-      src="pricing-2026.png?v=10"
-      alt="Sanford Lawn and Exterior Services straightforward starting prices for lawn care, exterior cleaning, RV washing, and vehicle washing"
-      class="pricing-main-image"
-    />
-  </div>
 </section>
 
-    <section class="section about-vincent" id="about">
-      <div class="container about-grid">
-        <div class="about-card">
-          <div class="portrait-placeholder">
-           <img  src="vincent-headshot-new.jpg" alt="Vincent Pienaar, owner and operator of Sanford Lawn and Exterior Services"/>
-          </div>
-          <h3>Vincent Pienaar</h3>
-          <p>Owner & Operator</p>
-         <a class="btn btn-primary" href="tel:9193566986">Call Vincent</a>
-<a class="btn btn-secondary" href="sms:9193566986">Text Vincent</a>
-        </div>
+<!-- QUICK INFORMATION -->
 
-        <div class="about-copy">
-          <span class="eyebrow">About Vincent</span>
-          <h2>Old-school work ethic. Local pride. Clear communication.</h2>
-          <p>
-            Sanford Lawn & Exterior Services is owner-operated by Vincent Pienaar, a dependable educator and local Sanford business owner. Vincent believes in honest work, clear communication, and old-school reliability. Whether it’s lawn care, pressure washing, camper cleaning, or vehicle washing, the goal is simple: show up, do the job right, and treat every property with respect.
-          </p>
-          <p>
-            Vincent brings decades of professional service, leadership, and community experience into this business. The goal is not to look like some huge national company. The goal is better: dependable local service with a personal name attached to the work. The business is general liability insured, and customers can receive clear estimates and professional invoices.
-          </p>
-          <div class="about-points">
-            <div><strong>Honest Pricing</strong><span>No games. Clear estimates before work starts.</span></div>
-            <div><strong>Reliable Service</strong><span>If it is scheduled, it matters.</span></div>
-            <div><strong>Fully Insured</strong><span>Built properly from the beginning.</span></div>
-            <div><strong>Local Accountability</strong><span>Sanford-based and community-focused.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="quick-info">
 
-    <section class="section gallery-section" id="gallery">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">SERVICE GALLERY</span>
-          <h2>Clean Work. Clear Results.</h2>
-          <p>Use this Real project photos will be added as new jobs are completed. For now, this section highlights the services available through Sanford Lawn & Exterior Services.</p>
-        </div>
+  <div class="container quick-grid">
 
-        <div class="before-after-grid">
+    <article>
+      <h3>Lawn Care</h3>
+      <p>
+        Mowing, edging, trimming, blowing,
+        and ongoing lawn maintenance.
+      </p>
+    </article>
 
- <article class="before-card image-contain">
-  <img
-    src="driveway-before-after.jpg"
-    alt="Driveway cleaning before and after result"
-  />
-  <div>
-    <h3>Driveway Cleaning Results</h3>
-    <p>Surface cleaning that removes dirt, grime, algae, and buildup from concrete driveways and walkways.</p>
+    <article>
+      <h3>Pressure Washing</h3>
+      <p>
+        Driveways, sidewalks, patios,
+        walkways, and exterior surfaces.
+      </p>
+    </article>
+
+    <article>
+      <h3>Fall & Winter Care</h3>
+      <p>
+        Leaf and pinecone cleanup,
+        shrub care, bed maintenance,
+        and debris removal.
+      </p>
+    </article>
+
+    <article>
+      <h3>Contact Vincent</h3>
+      <p>
+        <a href="tel:9193566986">
+          919-356-6986
+        </a>
+        <br>
+        <a href="mailto:sanfordlawnexteriorservices@gmail.com">
+          sanfordlawnexteriorservices@gmail.com
+        </a>
+      </p>
+    </article>
+
+    <article>
+      <h3>Invoices & Payments</h3>
+      <p>
+        Professional invoices available.
+        Convenient payment options accepted.
+      </p>
+    </article>
+
   </div>
-</article>
 
-<article class="before-card image-contain">
-  <img
-    src="lawn-before-after.jpg"
-    alt="Lawn care before and after result"
-  />
-  <div>
-    <h3>Lawn Care Results</h3>
-    <p>Before-and-after lawn care showing the difference mowing, trimming, edging, and cleanup can make.</p>
-  </div>
-</article>
+</section>
 
-<article class="before-card">
-  <img
-    src="rv-washing.png"
-    alt="RV exterior cleaning with foam cannon and pressure washer"
-  />
-  <div>
-    <h3>RV Exterior Cleaning</h3>
-    <p>Exterior washing for RVs and campers to help remove dirt, pollen, road grime, and buildup.</p>
-  </div>
-</article>
+<!-- SERVICES -->
 
-<article class="before-card">
-  <img
-    src="truck-washing.png"
-    alt="Truck exterior washing with foam cannon and pressure washer"
-  />
-  <div>
-    <h3>Vehicle Washing</h3>
-    <p>Exterior washing for cars, trucks, and SUVs with dependable owner-operated care.</p>
-  </div>
-</article>
+<section class="section" id="services">
 
-</div>
+  <div class="container">
 
-        <div class="gallery-grid marketing-gallery">
-          <figure class="gallery-item featured-card">
-            <img src="flyer-main.png" alt="Main marketing flyer for Sanford Lawn & Exterior Services" />
-            <figcaption>Main marketing flyer look carried into the website.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="contact-card.png" alt="Business card style contact panel" />
-            <figcaption>Business card style contact panel.</figcaption>
-          </figure>
-      <figure class="gallery-item">
-  <img
-    src="pricing-2026.png?v=2"
-    alt="Sanford Lawn and Exterior Services starting prices for lawn care, exterior cleaning, RV washing, and vehicle washing"
-  />
-  <figcaption>Simple, transparent starting prices.</figcaption>
-</figure>
-        </div>
-      </div>
-    </section>
+    <div class="section-heading">
 
-    <section class="section service-area" id="areas">
-      <div class="container area-grid">
-        <div>
-          <span class="eyebrow">Service Area</span>
-          <h2>Serving Sanford, NC and Nearby Communities</h2>
-          <p>
-            Sanford Lawn & Exterior Services is based in Sanford, North Carolina and serves local residential customers, RV owners, and nearby homeowners who need dependable lawn and exterior cleaning help.
-          </p>
-          <p class="area-note">
-            Not sure whether you are in range? Call or text with your address and the service you need.
-          </p>
-        </div>
+      <span class="eyebrow">WHAT WE DO</span>
 
-        <div class="area-card">
-          <h3>Primary Service Area</h3>
-          <ul>
-            <li>Sanford, NC</li>
-            <li>Lee County</li>
-            <li>Nearby residential neighborhoods</li>
-            <li>Local RV owners and camper owners</li>
-            <li>Mobile service by request</li>
-          </ul>
-          <button class="btn btn-primary" type="button" onclick="checkServiceArea()">Check Availability</button>
-        </div>
-      </div>
-    </section>
+      <h2>Lawn Care & Exterior Cleaning Services</h2>
 
-    <section class="section quote-section" id="quote">
-      <div class="container quote-grid">
-        <div>
-          <span class="eyebrow">Free Estimate</span>
-          <h2>Request a Quote</h2>
-          <p>
-            Fill this out with your name, contact information, service needed, and a short description. The form opens your email app for now, which keeps the site simple and free. We can replace it with Google Forms later.
-          </p>
-          <div class="contact-list">
-            <a href="tel:9193566986"><strong>Phone:</strong> 919-356-6986</a>
-            <a href="mailto:sanfordlawnexteriorservices@gmail.com"><strong>Email:</strong> sanfordlawnexteriorservices@gmail.com</a>
-            <span><strong>Location:</strong> Sanford, NC</span>
-            <span><strong>Insurance:</strong> General liability insured</span>
-            <span><strong>Payments:</strong> Professional invoices available; card, bank transfer, and select digital payments accepted</span>
-            <span><strong>Social:</strong> Follow us on Facebook and Instagram for updates, before-and-after photos, and seasonal specials</span>
-          </div>
-        </div>
+      <p>
+        Professional lawn maintenance,
+        seasonal property care,
+        and exterior cleaning for homeowners
+        throughout Sanford and nearby communities.
+      </p>
 
-        <form class="quote-form" action="https://formspree.io/f/mrejwbop" method="POST">
-  <input type="hidden" name="_subject" value="New Quote Request - Sanford Lawn & Exterior Services">
-
-  <label>
-    Name
-    <input type="text" name="Name" placeholder="Your name" required />
-  </label>
-
-  <label>
-    Phone or Email
-    <input type="text" name="Contact" placeholder="Best way to reach you" required />
-  </label>
-
-  <label>
-    Service Needed
-    <select name="Service" required>
-      <option value="">Select a service</option>
-      <option>Lawn mowing / edging</option>
-      <option>Pressure washing</option>
-      <option>Driveway + walkway wash</option>
-      <option>RV exterior wash</option>
-      <option>Vehicle wash</option>
-      <option>Bundle package</option>
-      <option>Other / not sure</option>
-    </select>
-  </label>
-
-  <label>
-    Property or Service Address
-    <input type="text" name="Address" placeholder="Street or general area" />
-  </label>
-
-  <label>
-    Message
-    <textarea name="Message" placeholder="Tell me what you need, approximate yard size, driveway size, RV size, or any special details." required></textarea>
-  </label>
-
-  <button class="btn btn-primary" type="submit">Send Quote Request</button>
-</form>
-
-          <p class="form-note">Tip: Attaching photos in your email helps with a faster quote.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <img src="clean-logo.png" alt="Sanford Lawn & Exterior Services logo" />
-      <p>Sanford Lawn & Exterior Services • Green. Clean. Shine. • General Liability Insured</p>
-      <p>Professional invoices available • Convenient payment options • Follow us on Facebook & Instagram</p>
-      <p><a href="tel:9193566986">919-356-6986</a> • <a href="mailto:sanfordlawnexteriorservices@gmail.com">sanfordlawnexteriorservices@gmail.com</a></p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <div class="service-grid">
+
+      <article class="service-card">
+
+        <img src="lawn-results.png?v=2"
+             alt="Lawn care results">
+
+        <div class="service-body">
+          <h3>Lawn Mowing & Edging</h3>
+          <p>
+            Weekly, biweekly, and monthly mowing,
+            edging, trimming, blowing,
+            and seasonal final cuts.
+          </p>
+        </div>
+
+      </article>
+
+      <article class="service-card">
+
+        <img src="hero-pressure-wash.jpg"
+             alt="Pressure washing">
+
+        <div class="service-body">
+          <h3>Pressure & Soft Washing</h3>
+          <p>
+            Driveways, sidewalks, walkways,
+            patios, siding, and suitable exterior surfaces.
+          </p>
+        </div>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="seasonal-image">🍂</div>
+
+        <div class="service-body">
+          <h3>Leaf & Pinecone Cleanup</h3>
+          <p>
+            Seasonal leaf, pinecone,
+            and yard debris collection,
+            including use of our Ohio Steel
+            tow-behind sweeper where suitable.
+          </p>
+        </div>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="seasonal-image">🌿</div>
+
+        <div class="service-body">
+          <h3>Shrub & Bed Maintenance</h3>
+          <p>
+            Shrub trimming, bed cleanup,
+            edging, mulch or pine-straw refresh,
+            and hard-to-reach property areas.
+          </p>
+        </div>
+
+      </article>
+
+      <article class="service-card">
+
+        <div class="seasonal-image">🚚</div>
+
+        <div class="service-body">
+          <h3>Debris Hauling & Disposal</h3>
+          <p>
+            Yard debris and leaf haul-off
+            available when needed.
+            Quoted separately.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GOOGLE CUSTOMER REVIEWS -->
+
+<section class="section customer-reviews" id="reviews">
+
+  <div class="container">
+
+    <div class="review-summary">
+
+      <span class="eyebrow">
+        VERIFIED GOOGLE CUSTOMER REVIEWS
+      </span>
+
+      <h2>Our Customers Say It Best!</h2>
+
+      <div class="review-stars">
+        ★★★★★
+      </div>
+
+      <h3>5.0 Google Rating</h3>
+
+      <p>
+        8 Google Reviews
+        <br>
+        <small>As of October 11, 2026</small>
+      </p>
+
+      <p>
+        Real customers. Real results.
+        Local service you can trust.
+      </p>
+
+    </div>
+
+    <div class="review-grid">
+
+      <article class="review-card">
+
+        <div class="review-stars">★★★★★</div>
+
+        <p>
+          "Vincent showed up 30 minutes after my
+          initial contact to provide me with a quote.
+          His work was exceptional, he was communicative,
+          and he was prompt on the day of service."
+        </p>
+
+        <div class="review-name">
+          — Emily Ames
+        </div>
+
+      </article>
+
+      <article class="review-card">
+
+        <div class="review-stars">★★★★★</div>
+
+        <p>
+          "My yard was transformed in one day
+          for an extremely reasonable price.
+          They are courteous, prompt, dependable,
+          and most of all they do an excellent job!"
+        </p>
+
+        <div class="review-name">
+          — Cicely Walker
+        </div>
+
+      </article>
+
+      <article class="review-card">
+
+        <div class="review-stars">★★★★★</div>
+
+        <p>
+          "My driveway literally looks so brand new
+          that I stood outside and just stared at it
+          for an hour! You can absolutely tell
+          he takes pride in his work."
+        </p>
+
+        <div class="review-name">
+          — Rocel Matthews
+        </div>
+
+      </article>
+
+      <article class="review-card">
+
+        <div class="review-stars">★★★★★</div>
+
+        <p>
+          "His pricing was fair, his workmanship
+          was excellent, and his communication
+          throughout the project was outstanding."
+        </p>
+
+        <div class="review-name">
+          — Shannon Johnson
+        </div>
+
+      </article>
+
+      <article class="review-card">
+
+        <div class="review-stars">★★★★★</div>
+
+        <p>
+          "Started working with Mr. Vincent and
+          we're happy to find our lawn care expert
+          who went above and beyond to help make
+          our home beautiful again."
+        </p>
+
+        <div class="review-name">
+          — Rolando Salas
+        </div>
+
+      </article>
+
+      <article class="review-card">
+
+        <div class="review-stars">★★★★★</div>
+
+        <p>
+          "Great service and excellent work
+          on our yard. We are very pleased.
+          Great communication as well.
+          Highly recommend."
+        </p>
+
+        <div class="review-name">
+          — Sandy McKay
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="review-actions">
+
+      <a class="btn btn-primary"
+         href="https://share.google/bwTpAPRhQJutfpDIf"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read Our Google Reviews
+      </a>
+
+      <a class="btn btn-secondary"
+         href="#quote">
+        Request a Free Estimate
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRICING -->
+
+<section class="pricing-section" id="pricing">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">
+        STRAIGHTFORWARD PRICING
+      </span>
+
+      <h2>Starting Prices Posted Up Front</h2>
+
+      <p>
+        Honest pricing based on property size,
+        terrain, access, obstacles, condition,
+        and the actual scope of work.
+        Final estimates are provided before work begins.
+      </p>
+
+    </div>
+
+    <img
+      class="pricing-photo pricing-main-image"
+      src="pricing-2026.png"
+      alt="Sanford Lawn and Exterior Services updated lawn care and exterior cleaning pricing sheet">
+
+    <p class="price-note">
+      Prices shown are starting prices, not guaranteed
+      final quotes. Difficult access, heavy buildup,
+      overgrown conditions, and additional services
+      may require a custom estimate.
+      Debris hauling and materials may be additional.
+    </p>
+
+    <div class="review-actions">
+      <a class="btn btn-primary" href="#quote">
+        Get Your Free Estimate
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT VINCENT -->
+
+<section class="section about-vincent" id="about">
+
+  <div class="container about-grid">
+
+    <div class="about-card">
+
+      <div class="portrait-placeholder">
+
+        <img src="vincent-headshot-new.jpg"
+             alt="Vincent Pienaar, owner of Sanford Lawn & Exterior Services">
+
+      </div>
+
+      <h3>Vincent Pienaar</h3>
+
+      <p>Owner & Operator</p>
+
+      <a class="btn btn-primary"
+         href="tel:9193566986">
+        Call Vincent
+      </a>
+
+      <a class="btn btn-secondary"
+         href="sms:9193566986">
+        Text Vincent
+      </a>
+
+    </div>
+
+    <div class="about-copy">
+
+      <span class="eyebrow">ABOUT VINCENT</span>
+
+      <h2>
+        Old-School Work Ethic.
+        Local Pride.
+        Clear Communication.
+      </h2>
+
+      <p>
+        Sanford Lawn & Exterior Services is
+        owner-operated by Vincent Pienaar,
+        a dependable educator and local Sanford
+        business owner.
+
+        Vincent brings the same commitment,
+        reliability, attention to detail,
+        and personal accountability to his
+        lawn and exterior services business
+        that have defined his career in education.
+      </p>
+
+      <p>
+        From lawn mowing and edging to
+        seasonal cleanup, shrub trimming,
+        pressure washing, and exterior
+        property maintenance, Vincent believes
+        in doing the job properly.
+
+        The goal is simple: show up,
+        communicate clearly, provide honest
+        estimates, and treat every customer's
+        property with respect.
+      </p>
+
+      <div class="about-points">
+
+        <div>
+          <strong>Honest Pricing</strong>
+          <span>Clear estimates before work starts.</span>
+        </div>
+
+        <div>
+          <strong>Reliable Service</strong>
+          <span>Dependable scheduling and communication.</span>
+        </div>
+
+        <div>
+          <strong>General Liability Insured</strong>
+          <span>Professional protection and accountability.</span>
+        </div>
+
+        <div>
+          <strong>Local Accountability</strong>
+          <span>Sanford-based and owner-operated.</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="section gallery-section" id="gallery">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">OUR WORK</span>
+
+      <h2>Clean Work. Clear Results.</h2>
+
+      <p>
+        See the difference professional mowing,
+        edging, cleanup, and exterior cleaning
+        can make around your property.
+      </p>
+
+    </div>
+
+    <div class="before-after-grid">
+
+      <article class="before-card image-contain">
+
+        <img src="driveway-before-after.jpg"
+             alt="Driveway cleaning before and after">
+
+        <div>
+          <h3>Driveway Cleaning</h3>
+          <p>
+            Removing built-up grime and
+            improving curb appeal.
+          </p>
+        </div>
+
+      </article>
+
+      <article class="before-card image-contain">
+
+        <img src="lawn-before-after.jpg"
+             alt="Lawn mowing before and after">
+
+        <div>
+          <h3>Lawn Care Results</h3>
+          <p>
+            Mowing, edging, and trimming
+            for a clean, maintained lawn.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SERVICE AREA -->
+
+<section class="section service-area" id="areas">
+
+  <div class="container area-grid">
+
+    <div>
+
+      <span class="eyebrow">SERVICE AREA</span>
+
+      <h2>
+        Serving Sanford, NC
+        and Nearby Communities
+      </h2>
+
+      <p>
+        Sanford Lawn & Exterior Services
+        provides residential lawn care,
+        seasonal maintenance, and exterior
+        cleaning throughout Sanford,
+        Lee County, and surrounding areas.
+      </p>
+
+      <p class="area-note">
+        Not sure whether you're in range?
+        Check below or contact Vincent
+        with your address and service needs.
+      </p>
+
+    </div>
+
+    <div class="area-card">
+
+      <h3>Primary Service Area</h3>
+
+      <ul>
+        <li>Sanford, NC</li>
+        <li>Lee County</li>
+        <li>Nearby Residential Neighborhoods</li>
+        <li>Seasonal Lawn & Leaf Cleanup</li>
+        <li>Additional Areas by Request</li>
+      </ul>
+
+      <button class="btn btn-primary"
+              type="button"
+              onclick="checkServiceArea()">
+        Check Availability
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- QUOTE FORM -->
+
+<section class="section quote-section" id="quote">
+
+  <div class="container quote-grid">
+
+    <div>
+
+      <span class="eyebrow">FREE ESTIMATE</span>
+
+      <h2>Request a Quote</h2>
+
+      <p>
+        Tell us about your property and
+        the services you need.
+
+        Vincent will personally review
+        your request and contact you
+        to discuss your estimate.
+      </p>
+
+      <div class="contact-list">
+
+        <a href="tel:9193566986">
+          <strong>Phone:</strong>
+          919-356-6986
+        </a>
+
+        <a href="mailto:sanfordlawnexteriorservices@gmail.com">
+          <strong>Email:</strong>
+          sanfordlawnexteriorservices@gmail.com
+        </a>
+
+        <span>
+          <strong>Location:</strong>
+          Sanford, NC
+        </span>
+
+        <span>
+          <strong>Insurance:</strong>
+          General Liability Insured
+        </span>
+
+        <span>
+          <strong>Payments:</strong>
+          Professional invoices available.
+          Convenient payment options accepted.
+        </span>
+
+        <span>
+          <strong>Social:</strong>
+          Follow us on Facebook and Instagram
+          for updates, before-and-after photos,
+          and seasonal specials.
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- EXISTING FORMSPREE FORM - DO NOT CHANGE ENDPOINT -->
+
+    <form class="quote-form"
+          action="https://formspree.io/f/mrejwbop"
+          method="POST">
+
+      <input type="hidden"
+             name="_subject"
+             value="New Quote Request - Sanford Lawn & Exterior Services">
+
+      <label>
+        Name
+        <input type="text"
+               name="Name"
+               placeholder="Your name"
+               required>
+      </label>
+
+      <label>
+        Phone or Email
+        <input type="text"
+               name="Contact"
+               placeholder="Best way to reach you"
+               required>
+      </label>
+
+      <label>
+        Service Needed
+
+        <select name="Service" required>
+
+          <option value="">
+            Select a service
+          </option>
+
+          <option>Lawn Mowing / Edging</option>
+          <option>Weekly Lawn Service</option>
+          <option>Biweekly Lawn Service</option>
+          <option>Monthly Lawn Service</option>
+          <option>Leaf / Pinecone Cleanup</option>
+          <option>Shrub / Hedge Trimming</option>
+          <option>Mulch / Pine Straw / Bed Cleanup</option>
+          <option>Driveway Pressure Washing</option>
+          <option>Sidewalk / Walkway Cleaning</option>
+          <option>Patio Cleaning</option>
+          <option>House Soft Washing</option>
+          <option>Debris Hauling</option>
+          <option>Multiple Services</option>
+          <option>Other / Not Sure</option>
+
+        </select>
+      </label>
+
+      <label>
+        Property or Service Address
+        <input type="text"
+               name="Address"
+               placeholder="Street address or general area">
+      </label>
+
+      <label>
+        Message
+
+        <textarea
+          name="Message"
+          placeholder="Tell us what you need, approximate property size, driveway size, debris volume, or any special details."
+          required></textarea>
+
+      </label>
+
+      <button class="btn btn-primary"
+              type="submit">
+        Send Quote Request
+      </button>
+
+      <p class="form-note">
+        Your request will be submitted online.
+        We will contact you to discuss the next steps.
+      </p>
+
+    </form>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+  <div class="container footer-inner">
+
+    <img src="clean-logo.png"
+         alt="Sanford Lawn & Exterior Services">
+
+    <p>
+      Sanford Lawn & Exterior Services
+      • Green. Clean. Shine.
+      • General Liability Insured
+    </p>
+
+    <p>
+      Professional invoices available.
+      Convenient payment options accepted.
+    </p>
+
+    <p>
+      Follow us on Facebook and Instagram
+      for updates, before-and-after photos,
+      and seasonal specials.
+    </p>
+
+    <p>
+      <a href="tel:9193566986">
+        919-356-6986
+      </a>
+
+      •
+
+      <a href="mailto:sanfordlawnexteriorservices@gmail.com">
+        sanfordlawnexteriorservices@gmail.com
+      </a>
+    </p>
+
+  </div>
+
+</footer>
+
+<!-- EXISTING JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+<!-- SERVICE AREA CHECKER -->
+
 <script>
-  function checkServiceArea() {
-    const location = prompt("Enter your city, neighborhood, or ZIP code to check service availability:");
 
-    if (!location) {
-      alert("No problem. You can still call or text 919-356-6986 to check availability.");
-      return;
-    }
+function checkServiceArea() {
 
-    const input = location.toLowerCase().trim();
+  const location = prompt(
+    "Enter your city, neighborhood, or ZIP code to check service availability:"
+  );
 
-    const primaryAreas = [
-      "sanford",
-      "27330",
-      "27332",
-      "lee county",
-      "broadway",
-      "lemon springs",
-      "tramway",
-      "jonesboro",
-      "colon",
-      "carolina trace"
-    ];
-
-    const nearbyAreas = [
-      "cameron",
-      "olivia",
-      "vass",
-      "moncure",
-      "gulf",
-      "goldston"
-    ];
-
-    const isPrimary = primaryAreas.some(area => input.includes(area));
-    const isNearby = nearbyAreas.some(area => input.includes(area));
-
-    if (isPrimary) {
-      alert("Good news! You are likely within our primary service area. Please call/text 919-356-6986 or submit a quote request so we can confirm details.");
-    } else if (isNearby) {
-      alert("You may be within our extended service area. Please call/text 919-356-6986 with your address so we can confirm availability.");
-    } else {
-      alert("You may be outside our regular service area, but feel free to call/text 919-356-6986. We may still be able to help depending on the job and schedule.");
-    }
+  if (!location) {
+    return;
   }
+
+  const input = location.toLowerCase().trim();
+
+  const primaryAreas = [
+    "sanford",
+    "27330",
+    "27332",
+    "lee county",
+    "broadway",
+    "lemon springs",
+    "tramway",
+    "jonesboro",
+    "colon",
+    "carolina trace"
+  ];
+
+  const nearbyAreas = [
+    "cameron",
+    "olivia",
+    "vass",
+    "moncure",
+    "gulf",
+    "goldston"
+  ];
+
+  const isPrimary = primaryAreas.some(
+    area => input.includes(area)
+  );
+
+  const isNearby = nearbyAreas.some(
+    area => input.includes(area)
+  );
+
+  if (isPrimary) {
+
+    alert(
+      "Good news! You are likely within our regular service area. Please submit a quote request or call 919-356-6986 to confirm availability."
+    );
+
+  } else if (isNearby) {
+
+    alert(
+      "You may be within our extended service area. Please send your address so we can confirm availability."
+    );
+
+  } else {
+
+    alert(
+      "Your location may be outside our regular service area. Please contact Vincent at 919-356-6986 to discuss your needs."
+    );
+
+  }
+
+}
+
 </script>
+
 </body>
 </html>
