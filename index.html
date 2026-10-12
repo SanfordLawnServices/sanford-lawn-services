@@ -104,6 +104,23 @@ html {
     grid-template-columns: 1fr;
   }
 }
+
+/* OCT 2026 VISUAL & SEASONAL UPDATES */
+.service-card > img {display:block;width:100%;height:210px;object-fit:cover;}
+.seasonal-video-grid {display:grid;grid-template-columns:1fr minmax(240px,400px);gap:30px;align-items:center;}
+#sanfordVideo {display:block;width:100%;max-height:510px;aspect-ratio:9/16;object-fit:contain;border-radius:16px;background:#102719;margin:auto;}
+#seasonal-video {background:linear-gradient(145deg,#eef6e9,#f6fbf2);}
+.sanford-popup[hidden] {display:none!important;}
+.sanford-popup {position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(8,31,19,.78);}
+.sanford-popup-panel {position:relative;display:grid;grid-template-columns:minmax(180px,40%) 1fr;max-width:850px;width:100%;max-height:calc(100dvh - 36px);background:#fff;border-radius:20px;box-shadow:0 15px 60px #0007;overflow:auto;}
+.sanford-popup-panel > img {width:100%;height:100%;min-height:330px;object-fit:cover;}
+.sanford-popup-content {padding:28px;color:#193c29;}
+.sanford-popup-content h2 {font-size:clamp(1.5rem,3vw,2.2rem);margin:12px 0;line-height:1.13;}
+.sanford-popup-content p {line-height:1.55;}
+.sanford-popup-actions {display:flex;flex-wrap:wrap;gap:10px;margin-top:17px;}
+.sanford-popup-close {position:absolute;right:12px;top:12px;width:42px;height:42px;border:0;border-radius:50%;background:white;font-size:26px;cursor:pointer;box-shadow:0 1px 12px #0004;z-index:1;}
+@media(max-width:720px) {.seasonal-video-grid{grid-template-columns:1fr;}.sanford-popup-panel{grid-template-columns:1fr;}.sanford-popup-panel > img{height:165px;min-height:0;}.sanford-popup-content{padding:16px 18px;}}
+
 </style>
 
 </head>
@@ -220,6 +237,21 @@ html {
 
 </section>
 
+
+<!-- CUSTOMER VIDEO -->
+<section class="section" id="seasonal-video">
+  <div class="container seasonal-video-grid">
+    <div><span class="eyebrow">MEET VINCENT</span>
+      <h2>Year-Round Property Care</h2>
+      <p>Watch Vincent introduce our local, owner-operated lawn and exterior services. See how we can help care for your property beyond mowing season.</p>
+      <a class="btn btn-primary" href="#quote">Request a Free Estimate</a>
+    </div>
+    <video id="sanfordVideo" controls playsinline preload="metadata" poster="promo-poster.jpg" aria-label="Vincent talks about year-round property care">
+      <source src="sanford-promo.mp4" type="video/mp4">Your browser does not support HTML5 video.
+    </video>
+  </div>
+</section>
+
 <!-- QUICK INFORMATION -->
 
 <section class="quick-info">
@@ -301,8 +333,7 @@ html {
 
       <article class="service-card">
 
-        <img src="lawn-results.png?v=2"
-             alt="Lawn care results">
+        <img src="lawn-edging-vincent.png" alt="Illustrative lawn edging with EGO equipment" loading="lazy">
 
         <div class="service-body">
           <h3>Lawn Mowing & Edging</h3>
@@ -332,7 +363,7 @@ html {
 
       <article class="service-card">
 
-        <div class="seasonal-image">🍂</div>
+        <img src="leaf-cleanup-vincent.jpg" alt="Illustrative leaf cleanup with Ariens mower and Ohio Steel-style sweeper" loading="lazy">
 
         <div class="service-body">
           <h3>Leaf & Pinecone Cleanup</h3>
@@ -348,7 +379,7 @@ html {
 
       <article class="service-card">
 
-        <div class="seasonal-image">🌿</div>
+        <img src="shrub-trimming-vincent.jpg" alt="Illustrative shrub trimming with EGO hedge trimmer" loading="lazy">
 
         <div class="service-body">
           <h3>Shrub & Bed Maintenance</h3>
@@ -363,7 +394,7 @@ html {
 
       <article class="service-card">
 
-        <div class="seasonal-image">🚚</div>
+        <img src="leaf-blowing-vincent.jpg" alt="Illustrative yard debris and leaf blowing" loading="lazy">
 
         <div class="service-body">
           <h3>Debris Hauling & Disposal</h3>
@@ -693,12 +724,10 @@ html {
 
       <span class="eyebrow">OUR WORK</span>
 
-      <h2>Clean Work. Clear Results.</h2>
+      <h2>Property Care Illustrations</h2>
 
       <p>
-        See the difference professional mowing,
-        edging, cleanup, and exterior cleaning
-        can make around your property.
+        These images illustrate potential improvements from mowing and exterior cleaning. They are not photographs of verified customer projects.
       </p>
 
     </div>
@@ -708,7 +737,7 @@ html {
       <article class="before-card image-contain">
 
         <img src="driveway-before-after.jpg"
-             alt="Driveway cleaning before and after">
+             alt="Illustrative driveway cleaning before and after">
 
         <div>
           <h3>Driveway Cleaning</h3>
@@ -723,7 +752,7 @@ html {
       <article class="before-card image-contain">
 
         <img src="lawn-before-after.jpg"
-             alt="Lawn mowing before and after">
+             alt="Illustrative lawn care before and after">
 
         <div>
           <h3>Lawn Care Results</h3>
@@ -985,6 +1014,43 @@ html {
   </div>
 
 </footer>
+
+
+<!-- SEASONAL POPUP: SHOW ONCE PER TAB SESSION -->
+<div class="sanford-popup" id="sanfordSeasonalPopup" role="dialog" aria-modal="true" aria-labelledby="sanfordPopupTitle" hidden>
+  <div class="sanford-popup-panel">
+    <button type="button" class="sanford-popup-close" id="sanfordPopupClose" aria-label="Close seasonal offer">×</button>
+    <img src="promo-poster.jpg" alt="Illustrative autumn leaf cleanup with Sanford Lawn and Exterior Services">
+    <div class="sanford-popup-content">
+      <span class="eyebrow">FALL & WINTER PROPERTY CARE</span>
+      <h2 id="sanfordPopupTitle">Your yard still needs care after mowing season.</h2>
+      <p>Leaf and pinecone cleanup, shrub trimming, bed refreshes, driveway cleaning, and other seasonal services from Vincent.</p>
+      <p>Locally owned. General liability insured. Personal attention to every property.</p>
+      <div class="sanford-popup-actions">
+        <a class="btn btn-primary" href="#quote" data-close-popup>Request a Free Estimate</a>
+        <a class="btn btn-secondary" href="#seasonal-video" data-close-popup>Watch Vincent's Video</a>
+        <a class="btn btn-secondary" href="tel:9193566986">Call Vincent</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const modal=document.getElementById('sanfordSeasonalPopup');
+  const closeButton=document.getElementById('sanfordPopupClose');
+  let previousFocus=null;
+  function hidePopup(){modal.hidden=true;document.body.style.overflow='';if(previousFocus&&previousFocus.focus)previousFocus.focus();}
+  function showPopup(){
+    try {if(sessionStorage.getItem('sanfordPopupSeen2026'))return;sessionStorage.setItem('sanfordPopupSeen2026','1');} catch(e) {}
+    previousFocus=document.activeElement;modal.hidden=false;document.body.style.overflow='hidden';closeButton.focus();
+  }
+  closeButton.addEventListener('click',hidePopup);
+  modal.querySelectorAll('[data-close-popup]').forEach(el=>el.addEventListener('click',hidePopup));
+  modal.addEventListener('click',e=>{if(e.target===modal)hidePopup();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)hidePopup();});
+  window.addEventListener('load',()=>setTimeout(showPopup,1600));
+})();
+</script>
 
 <!-- EXISTING JAVASCRIPT -->
 
