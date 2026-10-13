@@ -121,6 +121,31 @@ html {
 .sanford-popup-close {position:absolute;right:12px;top:12px;width:42px;height:42px;border:0;border-radius:50%;background:white;font-size:26px;cursor:pointer;box-shadow:0 1px 12px #0004;z-index:1;}
 @media(max-width:720px) {.seasonal-video-grid{grid-template-columns:1fr;}.sanford-popup-panel{grid-template-columns:1fr;}.sanford-popup-panel > img{height:165px;min-height:0;}.sanford-popup-content{padding:16px 18px;}}
 
+
+/* Approved original fall/winter graphic — responsive, with genuine clickable areas */
+.sanford-popup .sanford-artwork-popup {
+  display:block;
+  width:min(94vw,850px);
+  max-width:850px;
+  max-height:calc(100dvh - 30px);
+  overflow:auto;
+  background:transparent;
+  border-radius:18px;
+}
+.sanford-popup-artwork {position:relative;width:100%;line-height:0;}
+.sanford-popup-artwork > img {display:block;width:100%;height:auto;max-width:none;}
+.sanford-popup-artwork .sanford-popup-close {
+  position:absolute;top:1.4%;right:1.3%;width:7%;height:auto;aspect-ratio:1;
+  min-width:35px;max-width:55px;border-radius:50%;font-size:clamp(22px,3vw,31px);
+}
+.sanford-hotspot {position:absolute;display:block;z-index:2;border-radius:12px;}
+.sanford-hotspot:focus-visible {outline:4px solid #ffe36a;outline-offset:-4px;}
+.sanford-hotspot-video {left:2.7%;top:55.2%;width:33.5%;height:8.1%;}
+.sanford-hotspot-quote {left:2.2%;top:85.1%;width:39.5%;height:6.0%;}
+@media(max-width:600px) {
+  .sanford-popup {padding:8px;}
+  .sanford-popup .sanford-artwork-popup {width:min(98vw,580px);max-height:calc(100dvh - 16px);border-radius:10px;}
+}
 </style>
 
 </head>
@@ -1016,21 +1041,14 @@ html {
 </footer>
 
 
-<!-- SEASONAL POPUP: SHOW ONCE PER TAB SESSION -->
-<div class="sanford-popup" id="sanfordSeasonalPopup" role="dialog" aria-modal="true" aria-labelledby="sanfordPopupTitle" hidden>
-  <div class="sanford-popup-panel">
-    <button type="button" class="sanford-popup-close" id="sanfordPopupClose" aria-label="Close seasonal offer">×</button>
-    <img src="promo-poster.jpg" alt="Illustrative autumn leaf cleanup with Sanford Lawn and Exterior Services">
-    <div class="sanford-popup-content">
-      <span class="eyebrow">FALL & WINTER PROPERTY CARE</span>
-      <h2 id="sanfordPopupTitle">Your yard still needs care after mowing season.</h2>
-      <p>Leaf and pinecone cleanup, shrub trimming, bed refreshes, driveway cleaning, and other seasonal services from Vincent.</p>
-      <p>Locally owned. General liability insured. Personal attention to every property.</p>
-      <div class="sanford-popup-actions">
-        <a class="btn btn-primary" href="#quote" data-close-popup>Request a Free Estimate</a>
-        <a class="btn btn-secondary" href="#seasonal-video" data-close-popup>Watch Vincent's Video</a>
-        <a class="btn btn-secondary" href="tel:9193566986">Call Vincent</a>
-      </div>
+<!-- SEASONAL POPUP: APPROVED ARTWORK; LINKS ARE LIVE HTML CONTROLS -->
+<div class="sanford-popup" id="sanfordSeasonalPopup" role="dialog" aria-modal="true" aria-label="Fall and Winter Property Care" hidden>
+  <div class="sanford-popup-panel sanford-artwork-popup">
+    <div class="sanford-popup-artwork">
+      <img src="fall-winter-popup.png" alt="Fall and Winter Property Care Plan from Sanford Lawn & Exterior Services, showing seasonal lawn, leaf, shrub and driveway services." width="1122" height="1402">
+      <button type="button" class="sanford-popup-close" id="sanfordPopupClose" aria-label="Close seasonal popup">×</button>
+      <a class="sanford-hotspot sanford-hotspot-video" href="#seasonal-video" data-close-popup data-play-video aria-label="Watch Vincent's video"></a>
+      <a class="sanford-hotspot sanford-hotspot-quote" href="#quote" data-close-popup aria-label="Request a free estimate"></a>
     </div>
   </div>
 </div>
@@ -1039,13 +1057,35 @@ html {
   const modal=document.getElementById('sanfordSeasonalPopup');
   const closeButton=document.getElementById('sanfordPopupClose');
   let previousFocus=null;
-  function hidePopup(){modal.hidden=true;document.body.style.overflow='';if(previousFocus&&previousFocus.focus)previousFocus.focus();}
-  function showPopup(){
-    try {if(sessionStorage.getItem('sanfordPopupSeen2026'))return;sessionStorage.setItem('sanfordPopupSeen2026','1');} catch(e) {}
-    previousFocus=document.activeElement;modal.hidden=false;document.body.style.overflow='hidden';closeButton.focus();
+  function hidePopup(){
+    modal.hidden=true;
+    document.body.style.overflow='';
   }
-  closeButton.addEventListener('click',hidePopup);
-  modal.querySelectorAll('[data-close-popup]').forEach(el=>el.addEventListener('click',hidePopup));
+  function showPopup(){
+    try {
+      if(sessionStorage.getItem('sanfordPopupSeen2026v2'))return;
+      sessionStorage.setItem('sanfordPopupSeen2026v2','1');
+    } catch(e) {}
+    previousFocus=document.activeElement;
+    modal.hidden=false;
+    document.body.style.overflow='hidden';
+    closeButton.focus();
+  }
+  closeButton.addEventListener('click',()=>{
+    hidePopup();
+    if(previousFocus && previousFocus.focus)previousFocus.focus();
+  });
+  modal.querySelectorAll('[data-close-popup]').forEach(el=>el.addEventListener('click',()=>{
+    hidePopup();
+    if(el.hasAttribute('data-play-video')){
+      const video=document.getElementById('sanfordVideo');
+      if(video){
+        video.muted=false;
+        const request=video.play();
+        if(request && request.catch)request.catch(()=>{});
+      }
+    }
+  }));
   modal.addEventListener('click',e=>{if(e.target===modal)hidePopup();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.hidden)hidePopup();});
   window.addEventListener('load',()=>setTimeout(showPopup,1600));
