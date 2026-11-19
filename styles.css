@@ -790,3 +790,19 @@ a {
   height: auto;
   display: block;
 }
+
+
+/* SmartQuote intake, matching the existing Sanford palette */
+.sq-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.sq-intro {border:1px solid var(--border);border-radius:18px;padding:19px;background:linear-gradient(130deg,var(--green-soft),var(--blue-soft))}
+.sq-intro h3,.sq-photo-guide h3 {margin:0 0 8px;color:var(--dark);font-size:1.25rem}
+.sq-intro p,.sq-photo-guide p {font-size:.94rem;line-height:1.6;margin:6px 0}
+.sq-reference {font-size:.85rem!important}
+.sq-reference strong {color:var(--blue)}
+.sq-details {border:1px solid var(--border);border-radius:16px;background:#f8fbf8;overflow:hidden}
+.sq-details summary {cursor:pointer;padding:18px;font-weight:800;color:var(--dark)}
+.sq-details summary:hover {color:var(--green)}
+.sq-detail-body {padding:0 17px 17px;display:grid;gap:14px}
+.sq-photo-guide {padding:18px;border:1px solid #bad5b0;border-radius:16px;background:var(--green-soft)}
+.sq-photo-guide a {color:var(--blue);font-weight:800;text-decoration:underline;overflow-wrap:anywhere}
+@media(max-width:640px){.sq-grid{grid-template-columns:1fr}}
