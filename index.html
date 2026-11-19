@@ -910,15 +910,16 @@ html {
 
     </div>
 
-    <!-- EXISTING FORMSPREE FORM - DO NOT CHANGE ENDPOINT -->
+    <!-- SmartQuote intake: existing Formspree endpoint and email subject are preserved -->
 
-    <form class="quote-form"
+    <form class="quote-form" id="smartquote-form"
           action="https://formspree.io/f/mrejwbop"
           method="POST">
 
       <input type="hidden"
              name="_subject"
              value="New Quote Request - Sanford Lawn & Exterior Services">
+      <input type="hidden" name="Lead_ID" id="sq-lead-id" value="">
 
       <label>
         Name
@@ -935,6 +936,23 @@ html {
                placeholder="Best way to reach you"
                required>
       </label>
+      <div class="sq-grid">
+        <label>
+          Email address (if you want the written estimate by email)
+          <input type="email" name="Customer_Email" placeholder="name@example.com" autocomplete="email">
+        </label>
+        <label>
+          Phone number (for photo texts or follow-up)
+          <input type="tel" name="Phone" placeholder="(919) 555-0123" autocomplete="tel">
+        </label>
+      </div>
+      <label>
+        How should we contact you?
+        <select name="Preferred_Contact">
+          <option>No preference</option><option>Email</option><option>Text message</option><option>Phone call</option>
+        </select>
+      </label>
+
 
       <label>
         Service Needed
@@ -962,6 +980,16 @@ html {
 
         </select>
       </label>
+      <label>
+        Service schedule
+        <select name="Frequency">
+          <option value="Not specified">Not sure yet</option>
+          <option>Weekly recurring</option><option>Every two weeks recurring</option>
+          <option>Monthly recurring</option><option>One-time job</option>
+          <option>Seasonal maintenance</option>
+        </select>
+      </label>
+
 
       <label>
         Property or Service Address
@@ -969,6 +997,97 @@ html {
                name="Address"
                placeholder="Street address or general area">
       </label>
+      <div class="sq-intro">
+        <h3>Tell us about your property</h3>
+        <p>These optional details help us calculate realistic working time, access, cleanup and material costs. For large or uncertain jobs, Vincent may recommend an onsite visit.</p>
+        <p class="sq-reference">Your request reference: <strong id="sq-lead-display">Generating…</strong></p>
+      </div>
+      <details class="sq-details" id="sq-lawn">
+        <summary>Lawn size, condition and equipment access</summary>
+        <div class="sq-detail-body">
+          <div class="sq-grid">
+            <label>Approximate grass area (not lot size)
+              <select name="Mowable_Area">
+                <option value="Unknown">Not sure</option><option>Under 5,000 sq ft</option>
+                <option>5,000–10,000 sq ft</option><option>10,000–20,000 sq ft</option>
+                <option>20,000 sq ft to 1 acre</option><option>More than 1 acre</option>
+              </select>
+            </label>
+            <label>Current grass height
+              <select name="Grass_Height">
+                <option value="Unknown">Not sure</option><option>Regularly maintained</option>
+                <option>6–10 inches</option><option>Over 10 inches / heavily overgrown</option>
+              </select>
+            </label>
+            <label>Terrain and slopes
+              <select name="Terrain">
+                <option value="Unknown">Not sure</option><option>Mostly level</option>
+                <option>Some slopes</option><option>Steep or difficult slopes</option>
+              </select>
+            </label>
+            <label>Backyard mower access
+              <select name="Gate_Access">
+                <option value="Unknown">Not sure</option><option>Wide gate (60 inches or wider)</option>
+                <option>Narrow gate / push mower required</option>
+                <option>No mower access</option><option>No backyard</option>
+              </select>
+            </label>
+            <label>When was the grass last cut?
+              <select name="Last_Mowed">
+                <option value="Unknown">Not sure</option><option>Within 2 weeks</option>
+                <option>2–4 weeks ago</option><option>Over 4 weeks ago</option>
+              </select>
+            </label>
+          </div>
+          <label>Obstacles, pets, fences or other challenges
+            <textarea rows="2" name="Lawn_Conditions" placeholder="Trees, steep banks, narrow passages, gardens, fences..."></textarea>
+          </label>
+        </div>
+      </details>
+      <details class="sq-details" id="sq-cleanup">
+        <summary>Leaves, pinecones, shrubs, beds and hauling</summary>
+        <div class="sq-detail-body">
+          <div class="sq-grid">
+            <label>Amount of debris
+              <select name="Debris_Amount">
+                <option value="Unknown">Not sure</option><option>Light / scattered</option>
+                <option>Moderate / some piles</option><option>Heavy / thick coverage</option>
+                <option>Very heavy / multiple loads</option>
+              </select>
+            </label>
+            <label>Disposal required?
+              <select name="Disposal">
+                <option value="Unknown">Not sure</option><option>Curbside where permitted</option>
+                <option>Bag and leave onsite</option><option>Haul offsite / disposal required</option>
+              </select>
+            </label>
+          </div>
+          <label>Estimated number/size of beds, shrubs or cleanup areas
+            <textarea rows="2" name="Cleanup_Details" placeholder="e.g., six shrubs, four beds, leaves front and back"></textarea>
+          </label>
+        </div>
+      </details>
+      <details class="sq-details" id="sq-washing">
+        <summary>Driveway, sidewalk, patio or exterior washing</summary>
+        <div class="sq-detail-body">
+          <div class="sq-grid">
+            <label>Approximate dimensions
+              <input type="text" name="Wash_Dimensions" placeholder="e.g., 40 ft × 15 ft driveway">
+            </label>
+            <label>Surface condition
+              <select name="Wash_Condition">
+                <option value="Unknown">Not sure</option><option>Light dirt</option>
+                <option>Normal staining/algae</option><option>Heavy buildup</option>
+                <option>Delicate/unknown surface</option>
+              </select>
+            </label>
+          </div>
+          <label>Other exterior cleaning details
+            <textarea rows="2" name="Wash_Details" placeholder="Water access, stairs, delicate surfaces, height, drainage or severe staining"></textarea>
+          </label>
+        </div>
+      </details>
+
 
       <label>
         Message
@@ -980,14 +1099,23 @@ html {
 
       </label>
 
+      <div class="sq-photo-guide">
+        <h3>Help us see the job clearly</h3>
+        <p>For more accurate estimates, send photos <strong>after this form</strong> by text to <a href="sms:+19193566986">919-356-6986</a> or by email to <a href="mailto:sanfordlawnexteriorservices@gmail.com?subject=Property%20photos%20for%20estimate">sanfordlawnexteriorservices@gmail.com</a>. Include your name, address and request reference above so we can match them.</p>
+        <p><strong>Useful photos:</strong> the full front and back yard; slopes and gate width; close-ups of overgrowth and obstacles; debris piles, beds, shrubs or stained surfaces. If possible, provide measurements too. Please avoid including faces or private documents.</p>
+      </div>
+      <label>
+        Will you send photos separately?
+        <select name="Photos_Planned"><option>Not at this time</option><option>Yes, by text</option><option>Yes, by email</option></select>
+      </label>
       <button class="btn btn-primary"
               type="submit">
-        Send Quote Request
+        Send My Free Estimate Request
       </button>
 
       <p class="form-note">
         Your request will be submitted online.
-        We will contact you to discuss the next steps.
+        We will contact you to discuss the next steps. No price is generated or agreed to by this form. Complex jobs may require an onsite inspection. Work is weather permitting.
       </p>
 
     </form>
