@@ -1,0 +1,22 @@
+name = "sanford-smartquote-api"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+workers_dev = false
+
+# Deployment intentionally blocked until resources and secrets are configured.
+# Add D1 database_id after creating database, and R2 bucket after creating it.
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "sanford-smartquote"
+# database_id = "REPLACE_WITH_D1_DATABASE_ID"
+#
+# [[r2_buckets]]
+# binding = "PHOTOS"
+# bucket_name = "sanford-smartquote-private-photos"
+#
+# [vars]
+# ALLOWED_ORIGIN = "https://sanfordlawnservices.com"
+#
+# Secrets to configure via wrangler secret put:
+# OWNER_TOKEN
+# TURNSTILE_SECRET
